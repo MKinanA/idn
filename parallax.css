@@ -1,0 +1,15 @@
+/* Thank you https://keithclark.co.uk/articles/pure-css-parallax-websites/ */
+
+.parallax {
+  perspective: 1px;
+  overflow-y: auto;
+}
+.parallax__layer {
+  position: absolute;
+}
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+.parallax__layer--back {
+  transform: translateZ(-1px);
+}
