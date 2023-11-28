@@ -6,32 +6,41 @@
     <title>IDN Boarding School</title>
     <link rel="shortcut icon" href="attributes/logo.ico" type="image/x-icon">
     <!-- <link rel="stylesheet" href="parallax.css"> -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <link rel="preload" href="attributes/logo.svg" as="image">
 </head>
 <body>
     <div id="welcome-screen">
+        <div class="loading-circle"></div>
         <img src="attributes/logo.svg">
     </div>
-    <div class="background">
+    <div class="background" id="background">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipNHJ6z5_kGiZQtheMyb8sdqMYezjMGuP4kzSD2Q=s1360-w1360-h1020">
         <img src="https://lh3.googleusercontent.com/p/AF1QipNuiZIAhmoBndRgpzIR2Sz76_XRVtEfrthtHIsc=s1360-w1360-h1020">
         <img src="https://idn.sch.id/wp-content/uploads/2021/02/idn-boarding-school.jpg">
-        <img src="https://lh3.googleusercontent.com/p/AF1QipNHJ6z5_kGiZQtheMyb8sdqMYezjMGuP4kzSD2Q=s1360-w1360-h1020">
     </div>
     <header>
         <img id="logo" src="attributes/logo.svg">
         <nav>
-            <a>
-                Home
-                <ul></ul>
-            </a>
-            <a disabled>Profile</a>
-            <a disabled>Academic</a>
-            <a disabled>Information</a>
-            <a disabled>News</a>
-            <a disabled>Achievements</a>
-            <a disabled>PPDB</a>
-            <a disabled>Contact Us</a>
+            <div class="link" for="home">
+                <a>Home<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a>
+                <div class="dropdown">
+                    <a to="home">Home</a>
+                    <a to="why">Mengapa Sekolah di IDN</a>
+                    <a to="temankami">IDN Teman Kami</a>
+                    <a to="skills">Skills</a>
+                    <a to="news">Berita Terbaru</a>
+                    <a to="supports">Dukungan Industri</a>
+                </div>
+            </div>
+            <div class="link" disabled for="profile"><a>Profile<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
+            <div class="link" disabled for="academic"><a>Academic<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
+            <div class="link" disabled for="information"><a>Information<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
+            <div class="link" disabled for="news"><a>News<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
+            <div class="link" disabled for="achievements"><a>Achievements<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
+            <div class="link" disabled for="ppdb"><a>PPDB<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
+            <div class="link" disabled for="contact"><a>Contact Us<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
         </nav>
     </header>
     <main>
@@ -42,6 +51,21 @@
         </section>
         <section id="why">
             <h2>Mengapa Sekolah di IDN?</h2>
+            <p>SMP-SMK IDN menjadi favorit dengan lulusan yang sudah terbukti diatas standard atau bisa dikatakan expert. Terlebih support kegiatan dan tim pengajar yang sudah tidak diragukan lagi.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Ekstrakulikuler dan Kegiatan</h3>
+                    <p>Backpacking ASEAN, Edurace, Entrepreneur, Public Speaking, Berkuda, Beladiri, Character Building, Leadership Camp, Memanah, Susur Sungai, Panjat Tebing, Pecinta Alam, Berenang, Business Survival.</p>
+                </div>
+                <div class="card">
+                    <h3>Tim Pengajar</h3>
+                    <p>Dedi Gunawan, MT (S2 UI, CCIE), Ust. Febri Sariyanto (Alumni STDI Imam Syafii Jember), Ust.Muhammad Fikri Hilabi (Alumni STDI Imam Syafii Jember), Nicholas Edward Jenkins (Florida, USA) , Reza Fachrunas, S.Pd Gr.</p>
+                </div>
+                <div class="card">
+                    <h3>Program Unggulan</h3>
+                    <p>Menumbuh kembangkan soft skill maupun skill kompetensi melalui IDN Mengajar, Bootcamp, Leadership Camp, English Camp, IT Camp, dan masih banyak lagi.</p>
+                </div>
+            </div>
         </section>
     </main>
     <footer></footer>
