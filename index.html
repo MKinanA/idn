@@ -24,6 +24,7 @@
     </div>
     <header>
         <img id="logo" src="attributes/logo.svg">
+        <span class='bx bx-menu' id="menu-btn"></span>
         <nav>
             <div class="link" for="home">
                 <a>Home<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a>
@@ -34,16 +35,38 @@
                     <a to="skills">Skills</a>
                     <a to="news">Berita Terbaru</a>
                     <a to="supports">Dukungan Industri</a>
-                    <a to="contact">Hubungi Kami</a>
                 </div>
             </div>
-            <div class="link" disabled for="profile"><a>Profile<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
-            <div class="link" disabled for="academic"><a>Academic<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
-            <div class="link" disabled for="information"><a>Information<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
-            <div class="link" disabled for="news"><a>News<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
-            <div class="link" disabled for="achievements"><a>Achievements<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
-            <div class="link" disabled for="ppdb"><a>PPDB<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
-            <div class="link" disabled for="contact"><a>Contact Us<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a></div>
+            <div class="link" for="profile">
+                <a>Profile<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a>
+                <div class="dropdown">
+                    <a href="https://idn.sch.id/sambutan-direktur-idn/">SAMBUTAN DIREKTUR IDN</a>
+                    <a href="https://idn.sch.id/profil/">SEJARAH IDN</a>
+                    <a href="https://idn.sch.id/visi-dan-misi/">VISI DAN MISI</a>
+                    <a href="https://idn.sch.id/struktur-organisasi-idn/">STRUKTUR ORGANISASI DIREKTUR</a>
+                    <a href="https://idn.sch.id/logo-idn/">LOGO DAN PENJELASAN</a>
+                </div>
+            </div>
+            <div class="link" for="academic">
+                <a>Academic<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a>
+                <div class="dropdown">
+                    <a href="https://idn.sch.id/#">Keunggulan IDN</a>
+                    <a href="https://idn.sch.id/#">Kalender Akademik SMP-SMK</a>
+                    <a href="https://idn.sch.id/#">Design Kurikulum IT</a>
+                    <a href="https://idn.sch.id/#">Design Kurikulum Diniyah</a>
+                    <a href="https://idn.sch.id/pengumuman-kelulusan-peserta-didik-smp-idn/">Pengumuman Kelulusan SMP IDN</a>
+                </div>
+            </div>
+            <div class="link" for="information">
+                <a>Information<span>&nbsp;<span class='bx bxs-down-arrow'></span></span></a>
+                <div class="dropdown">
+                    <a href="https://idn.sch.id/wp-content/uploads/2022/04/buku-panduan-Tata-Tertib-Santri-IDN-V.1.0-April-21.pdf">Tata Tertib Santri IDN</a>
+                </div>
+            </div>
+            <div class="link" for="news"><a href="https://idn.sch.id/blog/">News<span>&nbsp;<span class='bx bx-link-external'></span></span></a></div>
+            <div class="link" for="achievements"><a href="https://idn.sch.id/prestasi/">Achievements<span>&nbsp;<span class='bx bx-link-external'></span></span></a></div>
+            <div class="link" for="ppdb"><a href="https://ppdb.idn.sch.id/">PPDB<span>&nbsp;<span class='bx bx-link-external'></span></span></a></div>
+            <div class="link" for="contact"><a href="https://idn.sch.id/kontak/">Contact<span>&nbsp;<span class='bx bx-link-external'></span></span></a></div>
         </nav>
     </header>
     <main>
@@ -171,8 +194,54 @@
                 </div>
             </div>
         </section>
+        <section id="supports">
+            <h2>Dukungan Industri</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="https://idn.sch.id/wp-content/uploads/2016/10/ima-studio.png">
+                    <h3 class="card-title">IMA Studio</h3>
+                </div>
+                <div class="card">
+                    <img src="https://idn.sch.id/wp-content/uploads/2021/01/Logo-idn-putih-300x159-1.png">
+                    <h3 class="card-title">ID-Networkers</h3>
+                </div>
+                <div class="card">
+                    <img src="https://idn.sch.id/wp-content/uploads/2016/10/cisco-academy-380x380.png">
+                    <h3 class="card-title">Cisco</h3>
+                </div>
+                <div class="card">
+                    <img src="https://idn.sch.id/wp-content/uploads/2016/10/mikrotik-academy-300x136.png">
+                    <h3 class="card-title">Mikrotik</h3>
+                </div>
+                <div class="card">
+                    <img src="https://idn.sch.id/wp-content/uploads/2021/01/ubquity-academy-150x150-1.png">
+                    <h3 class="card-title">Ubquiti</h3>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div>
+            <h3>IDN Boarding School</h3>
+            <p>Sekolah IT yang terletak di Jonggol, Sukanegara, Bogor dibawah Yayasan IDN. Fokus pembelajaran menjadikan peserta didik expert atau jagoan IT pinter ngaji.</p>
+        </div>
+        <div>
+            <h3>Profile</h3>
+            <a href="https://idn.sch.id/profil/">Tentang IDN</a>
+            <a href="https://idn.sch.id/prestasi/">Prestasi</a>
+            <a href="https://idn.sch.id/galeri/">Galeri Terbaru</a>
+            <a href="https://ppdb.idn.sch.id/">PPDB SMP-SMK IDN</a>
+            <a href="https://idn.sch.id/kontak/">Kontak</a>
+        </div>
+        <div>
+            <h3>Social Media</h3>
+            <a href="http://fb.com/smk.idn">Facebook</a>
+            <a href="https://instagram.com/idnboardingschool">Instagram</a>
+            <a href="https://twitter.com/smk_idn">Twitter</a>
+            <a href="https://www.youtube.com/channel/UCjkVxmE--3e7skferZbHWhg">Youtube</a>
+            <a href="https://training.idn.sch.id/">Training</a>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

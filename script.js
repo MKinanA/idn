@@ -9,7 +9,10 @@ btns = document.querySelectorAll('button'),
 btn_links = {
     'daftar': 'https://psb.idn.sch.id/'
 },
-intro_sound = new Audio('attributes/intro_(windows_xp_startup_sound).mp3');
+intro_sound = new Audio('attributes/intro_(windows_xp_startup_sound).mp3'),
+htas = document.querySelectorAll('a'),
+menu_btn = document.getElementById('menu-btn'),
+nav = document.querySelector('nav');
 let window_loaded = false;
 intro_sound.preload = 'auto';
 
@@ -40,7 +43,28 @@ nav_links.forEach(link => {
 });
 
 btns.forEach(btn => {
-    if (btn.getAttribute('for') in btn_links) {
+    if (btn.hasAttribute('for') && btn.getAttribute('for') in btn_links) {
         btn.onclick = _ => window.open(btn_links[btn.getAttribute('for')], '_blank');
     };
 });
+
+htas.forEach(hta => {
+    if (hta.hasAttribute('href')) {
+        hta.setAttribute('target', '_blank');
+        hta.onclick = _ => {
+            return confirm(`Anda akan meninggalkan website ini\n\nLink yang anda klik akan membawa anda ke tujuan yang bukan merupakan bagian dari ${location.hostname}`);
+        };
+    };
+});
+
+menu_btn.onclick = _ => {
+    nav.classList.toggle('active');
+};
+
+main.onclick = _ => {
+    nav.classList.remove('active');
+};
+
+document.documentElement.onscroll = _ => {
+    nav.classList.remove('active');
+};

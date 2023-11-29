@@ -52,7 +52,7 @@ html {
 
 body {
     perspective: 1px;
-    padding: 0 calc(10 * var(--unit));
+    padding: 0 10vw;
     overflow-y: hidden;
     overflow-x: hidden;
     height: 100vh;
@@ -146,12 +146,12 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: calc(4 * var(--unit));
+    gap: 4vw;
     position: sticky;
     top: 0;
-    width: calc(100vw - calc(calc(10 * var(--unit)) * 2));
-    margin-left: calc(-1 * calc(10 * var(--unit)));
-    padding: 0 calc(10 * var(--unit));
+    width: calc(100vw - calc(10vw * 2));
+    margin-left: calc(-1 * 10vw);
+    padding: 0 10vw;
     z-index: 16;
     height: var(--header-height);
     background: rgba(var(--bg-color), 0.5);
@@ -174,13 +174,22 @@ header nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: calc(2 * var(--unit));
+    gap: 2vw;
 }
 
-header nav div.link, header nav div.link > a, header nav div.link > a > span {
+header nav div.link, header nav div.link > a, header nav div.link > a > span, header .bx-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-transform: uppercase;
+    z-index: 16;
+}
+
+header .bx-menu {
+    font-size: calc(2 * var(--unit));
+    font-weight: 900;
+    cursor: pointer;
+    display: none;
 }
 
 header nav div.link > a, header nav div.link .dropdown a {
@@ -190,6 +199,7 @@ header nav div.link > a, header nav div.link .dropdown a {
     font-weight: 600;
     font-size: calc(1.25 * var(--unit));
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 header nav div.link > a > span {
@@ -221,15 +231,18 @@ header nav div.link .dropdown {
     display: flex;  
     flex-direction: column;
     gap: calc(0.25 * var(--unit));
-    background: rgba(var(--bg-color), 0.5);
+    background: rgba(var(--bg-color), 0.75);
     backdrop-filter: blur(0.5vw);
     padding: calc(0.75 * var(--unit));
-    padding-top: 0;
     border-radius: 0 0 calc(0.5 * var(--unit)) calc(0.5 * var(--unit));
-    z-index: 240;
+    z-index: 12;
     pointer-events: none;
     opacity: 0;
     transition: all 0.5s ease-in;
+}
+
+header nav div.link .dropdown a {
+    z-index: 12;
 }
 
 header nav div.link .dropdown.show, header nav div.link:hover .dropdown {
@@ -304,6 +317,7 @@ button:hover {
     color: rgb(var(--logo-color));
     background: rgba(var(--bg-color), 0.5);
     backdrop-filter: blur(0.5vw);
+    z-index: 1024;
 }
 
 .cards {
@@ -314,13 +328,13 @@ button:hover {
     justify-content: center;
     height: max-content;
     flex-wrap: wrap;
-    gap: calc(1.5 * var(--unit));
+    gap: calc(2.5 * var(--unit));
 }
 
 .cards .card {
     outline: solid calc(0.25 * var(--unit)) transparent;
     outline-offset:  calc(2 * var(--unit));
-    width: calc(21.25 * var(--unit));
+    width: 25%;
     padding: calc(1.5 * var(--unit));
     border-radius: calc(1 * var(--unit));
     border: solid calc(0.25 * var(--unit)) rgb(var(--color));
@@ -418,16 +432,153 @@ main > section:not(#home) > p {
     justify-content: space-between;
 }
 
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: calc(100vw - calc(10vw * 2));
+    margin-left: calc(-1 * 10vw);
+    padding: 4vw 10vw;
+    background: rgba(var(--bg-color), 0.5);
+    backdrop-filter: blur(0.5vw);
+}
+
+footer > div {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+footer > div:first-child {
+    width: 40%;
+}
+
+footer > div * {
+    margin: 0;
+    line-height: 1.25;
+    font-size: calc(1.5 * var(--unit));
+}
+
+footer > div h3 {
+    margin-bottom: calc(0.75 * var(--unit));
+}
+
+
+/* Preferred color scheme detector */
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --color: 255, 255, 255;
-        --bg-color: 0, 0, 0;
+        --color: 255, 255, 255 !important;
+        --bg-color: 0, 0, 0 !important;
     }
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        --color: 0, 0, 0;
-        --bg-color: 255, 255, 255;
+        --color: 0, 0, 0 !important;
+        --bg-color: 255, 255, 255 !important;
+    }
+}
+
+
+/* Responsive */
+
+@media (min-width: 1200px) {
+    :root {
+        --unit: 1vw !important;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    :root {
+        --unit: 1.1vw !important;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    :root {
+        --unit: 1.21vw !important;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 576px) { /* This is where the hamburger button will be */
+    :root {
+        --unit: 1.331vw !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    header .bx-menu {
+        display: block !important;
+    }
+
+    header nav {
+        position: absolute !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        right: -50vw !important;
+        height: min-content !important;
+        width: max-content !important;
+        top: var(--header-height) !important;
+        gap: calc(0.25 * var(--unit)) !important;
+        background: rgba(var(--bg-color), 0.75) !important;
+        backdrop-filter: blur(0.5vw) !important;
+        padding: calc(0.75 * var(--unit)) !important;
+        padding-left: 0 !important;
+        border-radius: 0 0 calc(0.5 * var(--unit)) calc(0.5 * var(--unit)) !important;
+        z-index: 12 !important;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.5s ease-in !important;
+    }
+
+    header nav.active {
+        right: 10vw !important;
+        opacity: 1 !important;
+        pointer-events: all !important;
+        transition: all 0.5s ease-out !important;
+    }
+
+    header nav div.link {
+        width: 100% !important;
+    }
+
+    header nav div.link a {
+        margin-left: calc(0.75 * var(--unit)) !important;
+    }
+
+    header nav div.link .dropdown {
+        top: inherit !important;
+        align-items: flex-end !important;
+        right: -50vw !important;
+        width: max-content !important;
+        pointer-events: none !important;
+        opacity: 0 !important;
+        transition: all 0.5 ease-in !important;
+        border-radius: calc(0.5 * var(--unit)) 0 0 calc(0.5 * var(--unit)) !important;
+        transform: translateY(calc(50% - 1em)) !important;
+    }
+
+    header nav div.link .dropdown.show, header nav div.link:hover .dropdown {
+        right: 100% !important;
+        pointer-events: all !important;
+        opacity: 1 !important;
+        transition: all 0.5s ease-out !important;
+    }
+
+    header nav div.link:hover > a > span span.bx {
+        transform: rotateZ(90deg);
+    }
+
+    header nav div.link > a, header nav div.link .dropdown a {
+        font-size: calc(1.75 * var(--unit));
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --unit: 1.4641vw !important;
     }
 }
