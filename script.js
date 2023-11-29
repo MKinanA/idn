@@ -51,8 +51,8 @@ btns.forEach(btn => {
 htas.forEach(hta => {
     if (hta.hasAttribute('href')) {
         hta.setAttribute('target', '_blank');
-        hta.onclick = _ => {
-            return confirm(`Anda akan meninggalkan website ini\n\nLink yang anda klik akan membawa anda ke tujuan yang bukan merupakan bagian dari ${location.hostname}`);
+        hta.onclick = function() {
+            return confirm(`Anda akan meninggalkan website ini\n\nLink yang anda klik akan membawa anda ke ${this.getAttribute('href')} yang bukan merupakan bagian dari ${location.hostname}`);
         };
     };
 });
