@@ -217,7 +217,7 @@ header nav div.link .dropdown a:hover, header nav div.link .dropdown a.active {
 
 header nav div.link .dropdown {
     position: absolute;
-    top: 0;
+    top: -50vw;
     display: flex;  
     flex-direction: column;
     gap: calc(0.25 * var(--unit));
@@ -229,12 +229,14 @@ header nav div.link .dropdown {
     z-index: 240;
     pointer-events: none;
     opacity: 0;
+    transition: all 0.5s ease-in;
 }
 
 header nav div.link .dropdown.show, header nav div.link:hover .dropdown {
     top: 100%;
     pointer-events: all;
     opacity: 1;
+    transition: all 0.5s ease-out;
 }
 
 *[disabled] {
@@ -304,23 +306,12 @@ button:hover {
     backdrop-filter: blur(0.5vw);
 }
 
-#why {
-    flex-direction: column;
-    gap: calc(1 * var(--unit));
-}
-
-#why > * {
-    margin: 0;
-    line-height: 1;
-    text-align: center;
-}
-
 .cards {
     display: flex;
     width: 100%;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
     height: max-content;
     flex-wrap: wrap;
     gap: calc(1.5 * var(--unit));
@@ -339,6 +330,7 @@ button:hover {
     justify-content: flex-start;
     gap: calc(1.5 * var(--unit));
     color: rgb(var(--color));
+    overflow: hidden;
 }
 
 .cards .card:hover {
@@ -348,6 +340,7 @@ button:hover {
     color: rgb(var(--logo-color));
     background: rgba(var(--bg-color), 0.5);
     backdrop-filter: blur(0.5vw);
+    z-index: 1024;
 }
 
 .cards .card:hover * {
@@ -356,32 +349,73 @@ button:hover {
 
 .cards .card > * {
     margin: 0;
+    width: 100%;
 }
 
-.cards .card h3 {
+.cards .card > .card-title {
+    padding-bottom: calc(1 * var(--unit));
+    border-bottom: solid calc(0.25 * var(--unit)) rgb(var(--color));
+}
+
+.cards .card h3 b {
+    font-weight: 900;
+}
+
+.cards .card:hover > .card-title {
+    border-bottom-color: rgb(var(--logo-color));
+}
+
+.cards .card > h3 {
     font-size: calc(1.5 * var(--unit));
     line-height: 1.25;
     font-weight: 600;
 }
 
-.cards .card p {
+.cards .card > p {
     font-size: calc(1.25 * var(--unit));
     line-height: 1.5;
     text-align: justify;
 }
 
-section:not(#home) {
-    gap: calc(1.75 * var(--unit));
+.cards .card > img {
+    border-radius: calc(0.75 * var(--unit));
 }
 
-section:not(#home) > h2 {
+main > section:not(#home) {
+    flex-direction: column;
+    gap: calc(2 * var(--unit));
+    padding: 10vw 0;
+}
+
+main > section:not(:last-child) {
+    border-bottom: solid calc(0.25 * var(--unit)) rgb(var(--color));
+}
+
+main > section:not(#home) > * {
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+}
+
+main > section:not(#home) > h2 {
     font-size: calc(4 * var(--unit));
     font-weight: 700;
+    margin-bottom: calc(1 * var(--unit));
 }
 
-section:not(#home) > p {
+main > section:not(#home) > p {
     line-height: 1.5;
     font-size: calc(1.25 * var(--unit));
+}
+
+#news > p:first-of-type {
+    margin-top: calc(-1.5 * var(--unit));
+}
+
+#news .cards .card > p:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 @media (prefers-color-scheme: dark) {
